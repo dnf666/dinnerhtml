@@ -30,10 +30,11 @@ export default {
       that.number = that.number - 1;
       if(that.number <= 0) {
         clearInterval(timer);
-        that.$router.push({ path: '/orderDinner' })
+        that.$router.push({ path: '/home' })
       }
     },1000)
   },
+
 
 }
 </script>
