@@ -29,7 +29,7 @@
 </template>
 
 <script>
-  const PREFIX = 'http://localhost:8081/';
+  const PREFIX = '/hrms';
 export default {
   name: 'Login',
   data() {
@@ -43,7 +43,7 @@ export default {
     onSubmit() {
       let that = this;
       //提交请求
-      this.$axios.post(PREFIX+'/hrms/company/login.do', {
+      this.$axios.post(PREFIX+'/company/login.do', {
         permission:this.radio,
         email: this.email,
         password: this.password

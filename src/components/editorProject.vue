@@ -60,7 +60,7 @@
 <script>
 
 var COMPANYID = window.sessionStorage.getItem('companyId')
-const PREFIX = 'http://localhost:8081/hrms/'
+const PREFIX = '/hrms/'
 export default {
   data () {
     return {

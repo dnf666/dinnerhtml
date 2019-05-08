@@ -166,7 +166,7 @@
 <script>
   //created和这里都有一个companyid,为了解决跳转COMPANYiD的问题.当然这种解决方法不好
   var COMPANYID = window.sessionStorage.getItem("companyId");
-  const PREFIX = 'http://localhost:8081/hrms';
+  const PREFIX = '/hrms';
 export default {
   data () {
     return {

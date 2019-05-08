@@ -156,7 +156,7 @@
 
 <script>
   const COMPANYID = window.sessionStorage.getItem("companyId");
-  const PREFIX = 'http://localhost:8081/hrms';
+  const PREFIX = '/hrms';
   const DEFAULT_PHOTO = PREFIX+'/photo/logo.png';
   export default {
     data() {

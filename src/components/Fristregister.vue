@@ -10,6 +10,7 @@
         class="st"
         :options="options"
         v-model="hy"
+        placeholder="组织类别"
         @change="handleChange"
       >
       </el-cascader>
@@ -44,7 +45,7 @@
 </template>
 
 <script>
-const PREFIX = 'http://localhost:8081/hrms'
+const PREFIX = '/hrms'
 // 验证是否能下一步
 let isnext = (that) => {
   for (var i = 0; i < 6; i++) {
@@ -145,7 +146,7 @@ export default {
         this.isnext[0] = false
         isnext(this)
       } else {
-        this.companyTips = '您输入的公司名有误'
+        this.companyTips = '您输入的公司名非全汉字'
       }
     },
     // 选择行业

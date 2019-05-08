@@ -435,7 +435,7 @@ import FileSaver from 'file-saver'
 import XLSX from 'xlsx'
 
 var COMPANYID = window.sessionStorage.getItem('companyId')
-const PREFIX = 'http://localhost:8081/hrms/'
+const PREFIX = '/hrms/'
 let isnext = (that) => {
   for (let i = 0; i < 1; i++) {
     if (that.isnext[i] == true) {
