@@ -701,7 +701,14 @@ export default {
         profession: this.newProfession,
         whereAbout: this.newWhereAbout
       }).then((response) => {
-        window.location.reload()
+        if(response.data.code == 1) {
+          window.location.reload()
+        }else {
+          this.$message({
+            type: 'error',
+            message: response.data.msg
+          })
+        }
       })
         .catch((error) => {
           alert(error)

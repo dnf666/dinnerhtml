@@ -22,7 +22,7 @@
       </el-input>
       <el-radio v-model="radio" label="2">成员</el-radio>
       <el-radio v-model="radio" label="1">管理员</el-radio>
-      <el-button class="loginbutton" type="primary" @click="onSubmit">登陆</el-button>
+      <el-button class="loginbutton" type="primary" :loading="loading" @click="onSubmit">登陆</el-button>
       <div class="footer">还没有账号？<router-link class="reg" to="/register">注册</router-link></div>
   </el-card>
   </div>
@@ -36,12 +36,14 @@ export default {
     return {
       email: '',
       password: '',
-      radio:'2'
+      radio:'2',
+      loading:false
     };
   },
   methods: {
     onSubmit() {
       let that = this;
+      this.loading = true;
       //提交请求
       this.$axios.post(PREFIX+'/company/login.do', {
         permission:this.radio,
@@ -57,6 +59,7 @@ export default {
           window.sessionStorage.setItem('isLogin', true);
           window.sessionStorage.setItem('permission', permission);
           window.sessionStorage.setItem('companyId',response.data.object.companyId);
+          this.loading = false;
           that.$router.push({path:'/CompanyInfo'})
         }
         else {
