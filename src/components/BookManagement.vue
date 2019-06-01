@@ -565,13 +565,13 @@ export default {
             type: 'success',
             message: '删除成功!'
           })
-          for (let i = 0; i < this.tableData.length; i++) {
-            this.tableData.forEach((v, i) => {
-              if (v.num === index) {
-                this.tableData.splice(i, 1)
-              }
-            })
-          }
+        }
+        for (let i = 0; i < this.tableData.length; i++) {
+          this.tableData.forEach((v, i) => {
+            if (v.bookId === index) {
+              this.tableData.splice(i, 1)
+            }
+          })
         }
       })
     },
