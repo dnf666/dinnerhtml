@@ -92,9 +92,9 @@
           v-show="permission == 1"
           :show-overflow-tooltip="true">
           <template slot-scope="scope">
-            <el-button type="text" size="small" @click="editorProject(scope.row)">编辑</el-button>
-            <el-button type="text" size="small" @click="deleteRow(scope.row.projectId)">删除</el-button>
-            <el-button type="text" size="small" @click="listProjectInTomcat(scope.row)">查看</el-button>
+            <el-button type="text" size="small" v-show="permission == 1" @click="editorProject(scope.row)">编辑</el-button>
+            <el-button type="text" size="small" v-show="permission == 1" @click="deleteRow(scope.row.projectId)">删除</el-button>
+            <el-button type="text" size="small" v-show="permission == 1" @click="listProjectInTomcat(scope.row)">查看</el-button>
           </template>
         </el-table-column>
       </el-table>
